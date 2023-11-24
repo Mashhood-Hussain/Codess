@@ -1,2 +1,8 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+import csv
+with open("company.csv", "r") as file:  #name of file
+    csvReader = csv.reader(file)
+    next(csvReader, None)
+    dataAsTuples = [tuple(row) for row in csvReader]
+
+file.close()
+print(dataAsTuples)
